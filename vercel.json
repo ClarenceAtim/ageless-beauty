@@ -1,0 +1,116 @@
+{
+  "rewrites": [
+    {
+      "source": "/product/:slug",
+      "destination": "/product/:slug.html"
+    },
+    {
+      "source": "/product/:slug/",
+      "destination": "/product/:slug.html"
+    },
+    {
+      "source": "/:category/page-:n",
+      "destination": "/:category-page-:n.html"
+    },
+    {
+      "source": "/:category/page-:n/",
+      "destination": "/:category-page-:n.html"
+    },
+    {
+      "source": "/serums",
+      "destination": "/serums.html"
+    },
+    {
+      "source": "/serums/",
+      "destination": "/serums.html"
+    },
+    {
+      "source": "/creams",
+      "destination": "/creams.html"
+    },
+    {
+      "source": "/creams/",
+      "destination": "/creams.html"
+    },
+    {
+      "source": "/eye-care",
+      "destination": "/eye-care.html"
+    },
+    {
+      "source": "/eye-care/",
+      "destination": "/eye-care.html"
+    },
+    {
+      "source": "/cleansers",
+      "destination": "/cleansers.html"
+    },
+    {
+      "source": "/cleansers/",
+      "destination": "/cleansers.html"
+    },
+    {
+      "source": "/masks",
+      "destination": "/masks.html"
+    },
+    {
+      "source": "/masks/",
+      "destination": "/masks.html"
+    },
+    {
+      "source": "/toners",
+      "destination": "/toners.html"
+    },
+    {
+      "source": "/toners/",
+      "destination": "/toners.html"
+    },
+    {
+      "source": "/spf",
+      "destination": "/spf.html"
+    },
+    {
+      "source": "/spf/",
+      "destination": "/spf.html"
+    },
+    {
+      "source": "/treatments",
+      "destination": "/treatments.html"
+    },
+    {
+      "source": "/treatments/",
+      "destination": "/treatments.html"
+    },
+    {
+      "source": "/cart",
+      "destination": "/cart.html"
+    },
+    {
+      "source": "/cart/",
+      "destination": "/cart.html"
+    },
+    {
+      "source": "/checkout",
+      "destination": "/checkout.html"
+    },
+    {
+      "source": "/checkout/",
+      "destination": "/checkout.html"
+    },
+    {
+      "source": "/search",
+      "destination": "/search.html"
+    },
+    {
+      "source": "/search/",
+      "destination": "/search.html"
+    },
+    {
+      "source": "/order-confirmation",
+      "destination": "/order-confirmation.html"
+    },
+    {
+      "source": "/order-confirmation/",
+      "destination": "/order-confirmation.html"
+    }
+  ]
+}
