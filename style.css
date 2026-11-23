@@ -205,6 +205,7 @@ h2.section { font-size: 1.5rem; text-align: center; margin: 2.2rem 0 .4rem; }
 .card .cat { font-size: .8rem; color: var(--stone); margin-bottom: .3rem; }
 .price { font-weight: 700; font-size: 1.05rem; margin-top: auto; }
 .price .old { font-weight: 400; color: var(--stone); text-decoration: line-through; font-size: .9rem; margin-left: .4rem; }
+.vat-note { font-weight: 400; color: var(--stone); font-size: .8rem; margin-left: .3rem; }
 .badge-off {
   display: inline-block;
   background: var(--red);
