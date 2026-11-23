@@ -62,6 +62,21 @@
   }
 
   /* ---------------- checkout page ---------------- */
+  /* Professional gate: professional-only products (dermal fillers, skin
+     boosters, mesotherapy) all carry catalogue IDs starting with "pf-".
+     When the cart contains any of them, checkout requires professional
+     details (clinic + licence number) before the order can be placed.
+     Full name and country come from the main form (already required);
+     they are copied into order.professional along with the two new
+     fields, so the saved order holds all four. */
+  function isProItem(it) { return it.id && it.id.indexOf('pf-') === 0; }
+  function hasProItems(cart) {
+    for (var i = 0; i < cart.length; i++) {
+      if (isProItem(cart[i])) return true;
+    }
+    return false;
+  }
+
   function orderNumber() {
     var d = new Date();
     var ymd = d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') +
@@ -93,6 +108,10 @@
       AB.formatEUR(total) + '</span></div></div>' +
       '<p style="font-size:.9rem;color:#6b645a;">Shipping costs are to be confirmed by the store.</p>';
     box.innerHTML = html;
+    /* Show the professional-details fields only when the cart holds
+       professional-only products; otherwise checkout is unchanged. */
+    var pro = el('pro-fields');
+    if (pro) pro.style.display = hasProItems(cart) ? 'block' : 'none';
   }
 
   function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
@@ -110,6 +129,19 @@
       if (err) err.textContent = bad ? (id === 'f-email' ? 'Enter a valid email address.' : 'This field is required.') : '';
       if (bad) ok = false;
     });
+    /* Professional gate: with professional products in the cart, the
+       clinic and licence fields are required too — the order cannot be
+       placed without them. */
+    var pro = hasProItems(cart);
+    if (pro) {
+      ['f-clinic', 'f-licence'].forEach(function (id) {
+        var input = el(id);
+        var err = el(id + '-err');
+        var bad = !input || !input.value.trim();
+        if (err) err.textContent = bad ? 'This field is required for professional-only products.' : '';
+        if (bad) ok = false;
+      });
+    }
     if (!ok) return;
     var total = cart.reduce(function (s, it) { return s + it.price * it.qty; }, 0);
     var order = {
@@ -127,6 +159,14 @@
         notes: el('f-notes') ? el('f-notes').value.trim() : ''
       }
     };
+    if (pro) {
+      order.professional = {
+        name: el('f-name').value.trim(),
+        clinic: el('f-clinic').value.trim(),
+        licence: el('f-licence').value.trim(),
+        country: el('f-country').value
+      };
+    }
     var orders = AB.readLS(AB.ORDERS_KEY, []);
     orders.push(order);
     AB.writeLS(AB.ORDERS_KEY, orders);
@@ -157,6 +197,10 @@
       'Please keep this number for your records.</p>' +
       '<p>The shop will confirm your order and send payment details to <strong>' +
       AB.escapeHtml(order.customer.email) + '</strong>. No payment has been taken.</p>' +
+      (order.professional
+        ? '<p><strong>Professional order:</strong> this order contains professional-only products. ' +
+          'The shop will verify your professional details before your order is dispatched.</p>'
+        : '') +
       '<h2>Order summary</h2><table class="lines"><thead><tr><th>Product</th><th>Qty</th><th>Price</th></tr></thead><tbody>';
     order.items.forEach(function (it) {
       html += '<tr><td>' + AB.escapeHtml(it.name) + '</td><td>' + it.qty +

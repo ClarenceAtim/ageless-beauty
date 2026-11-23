@@ -10,9 +10,9 @@
 <meta property="og:description" content="Checkout at Ageless Beauty. Place an order request — no payment is taken on this site; the shop confirms your order by email.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ageless-beauty.vercel.app/checkout/">
-<link rel="stylesheet" href="/style.css?v=96738f1c">
+<link rel="stylesheet" href="/style.css?v=3eec6afe">
 <script src="/shop.js?v=3020ebe4" defer></script>
-<script src="/checkout.js?v=87791c40" defer></script>
+<script src="/checkout.js?v=c49705e4" defer></script>
 </head>
 <body>
 <header>
@@ -25,8 +25,8 @@
 </form>
 <a class="cartlink" href="/cart/">Cart (<span id="cart-count">0</span>)</a>
 </div>
-<nav class="catnav" aria-label="Categories"><a href="/serums/">Face Serums</a><a href="/creams/">Creams &amp; Moisturizers</a><a href="/eye-care/">Eye Care</a><a href="/cleansers/">Cleansers</a><a href="/masks/">Masks</a><a href="/toners/">Toners</a><a href="/spf/">SPF &amp; Sun Protection</a><a href="/treatments/">Treatments</a></nav>
-<nav class="mobilenav" id="mobilenav" aria-label="Menu"><a href="/serums/">Face Serums</a><a href="/creams/">Creams &amp; Moisturizers</a><a href="/eye-care/">Eye Care</a><a href="/cleansers/">Cleansers</a><a href="/masks/">Masks</a><a href="/toners/">Toners</a><a href="/spf/">SPF &amp; Sun Protection</a><a href="/treatments/">Treatments</a><div class="mnav-help"><a href="/about/">About the shop</a><a href="/shipping/">Shipping</a><a href="/returns/">Returns</a><a href="/contact/">Contact</a><a href="/faq/">FAQ</a></div></nav>
+<nav class="catnav" aria-label="Categories"><a href="/serums/">Face Serums</a><a href="/creams/">Creams &amp; Moisturizers</a><a href="/eye-care/">Eye Care</a><a href="/cleansers/">Cleansers</a><a href="/masks/">Masks</a><a href="/toners/">Toners</a><a href="/spf/">SPF &amp; Sun Protection</a><a href="/treatments/">Treatments</a><a href="/professional/">Professional Fillers</a></nav>
+<nav class="mobilenav" id="mobilenav" aria-label="Menu"><a href="/serums/">Face Serums</a><a href="/creams/">Creams &amp; Moisturizers</a><a href="/eye-care/">Eye Care</a><a href="/cleansers/">Cleansers</a><a href="/masks/">Masks</a><a href="/toners/">Toners</a><a href="/spf/">SPF &amp; Sun Protection</a><a href="/treatments/">Treatments</a><a href="/professional/">Professional Fillers</a><div class="mnav-help"><a href="/about/">About the shop</a><a href="/shipping/">Shipping</a><a href="/returns/">Returns</a><a href="/contact/">Contact</a><a href="/faq/">FAQ</a></div></nav>
 </header>
 <main class="wrap">
 <h1>Checkout</h1>
@@ -58,6 +58,16 @@
 <div class="err" id="f-country-err"></div></div>
 <div class="field"><label for="f-notes">Order notes (optional)</label>
 <textarea id="f-notes" name="notes" rows="3" placeholder="Anything the shop should know about your order"></textarea></div>
+<div id="pro-fields" style="display:none;">
+<h2>Professional details</h2>
+<p>Your cart contains professional-only products (dermal fillers, skin boosters or mesotherapy). These are sold to licensed medical professionals only — please give your professional details. The shop verifies them before your order is dispatched.</p>
+<div class="field"><label for="f-clinic">Clinic / practice name <span class="req">*</span></label>
+<input id="f-clinic" name="clinic" type="text" autocomplete="organization" required>
+<div class="err" id="f-clinic-err"></div></div>
+<div class="field"><label for="f-licence">Professional licence / registration number <span class="req">*</span></label>
+<input id="f-licence" name="licence" type="text" required>
+<div class="err" id="f-licence-err"></div></div>
+</div>
 <p><button class="btn" id="place-order" type="submit">Place order request</button></p>
 </form>
 </main>
@@ -70,7 +80,7 @@
 </div>
 <div>
 <h3>Shop</h3>
-<a href="/serums/">Face Serums</a><a href="/creams/">Creams &amp; Moisturizers</a><a href="/eye-care/">Eye Care</a><a href="/cleansers/">Cleansers</a><a href="/masks/">Masks</a><a href="/toners/">Toners</a><a href="/spf/">SPF &amp; Sun Protection</a><a href="/treatments/">Treatments</a>
+<a href="/serums/">Face Serums</a><a href="/creams/">Creams &amp; Moisturizers</a><a href="/eye-care/">Eye Care</a><a href="/cleansers/">Cleansers</a><a href="/masks/">Masks</a><a href="/toners/">Toners</a><a href="/spf/">SPF &amp; Sun Protection</a><a href="/treatments/">Treatments</a><a href="/professional/">Professional Fillers</a>
 </div>
 <div>
 <h3>Help</h3>

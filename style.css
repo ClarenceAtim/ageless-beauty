@@ -311,6 +311,7 @@ h2.section { font-size: 1.5rem; text-align: center; margin: 2.2rem 0 .4rem; }
 .btn.secondary { background: #fff; color: var(--ink); border: 1px solid #d8ccc4; }
 .btn.secondary:hover { border-color: var(--rose); color: var(--rose-dark); }
 .note { background: var(--blush-2); border: 1px solid var(--line); border-radius: 8px; padding: .8rem 1rem; font-size: .92rem; margin: 1rem 0; }
+.pro-notice { border-left: 4px solid var(--rose-dark); }
 
 /* ---------- cart / checkout ---------- */
 table.lines { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }

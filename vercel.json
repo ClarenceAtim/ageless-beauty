@@ -81,6 +81,14 @@
       "destination": "/treatments.html"
     },
     {
+      "source": "/professional",
+      "destination": "/professional.html"
+    },
+    {
+      "source": "/professional/",
+      "destination": "/professional.html"
+    },
+    {
       "source": "/cart",
       "destination": "/cart.html"
     },
